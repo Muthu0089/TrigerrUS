@@ -192,7 +192,7 @@ p, li, span, div { font-size: inherit; }
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--text-primary);
-  letter-spacing: 2px;
+  letter-spacing: 4px;
 }
 
 .nav-links {
@@ -686,31 +686,127 @@ p { color: rgba(255, 255, 255, 0.75); }
 }
 .success-box.show { display: block; }
 
-/* RESPONSIVE */
+/* =============================================
+   RESPONSIVE
+   ============================================= */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
+
 @media (max-width: 768px) {
-  section { padding: 4rem 5%; }
+  section { padding: 3.5rem 5%; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .nav-links { 
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: rgba(2, 5, 16, 0.98);
-    padding: 2rem 5%;
-    flex-direction: column;
-    gap: 1.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-links.open { display: flex; }
-  .hamburger { display: flex; }
   .form-row { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+  /* Hero split → single column */
+  .hero-section > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .hero-section canvas { height: 280px !important; }
+
+  /* Page hero padding */
+  .page-hero { padding: 6rem 5% 3rem; }
+  .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+
+  /* Navbar mobile */
+  .btn-demo { display: none; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    margin-left: 235px;
+    background: rgba(2, 5, 16, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1.5rem 5%;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    z-index: 9998;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .nav-links.open { display:list-item;
+    justify-content: right;
+  
+  width:120px;
+background-color: #0d0e0e; }
+  .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a {
+    display: block;
+    padding: 0.9rem 0;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+  }
+  .nav-links a.active,
+  .nav-links a:hover { color: var(--cyan); }
+
+  /* Hamburger visible */
+  .hamburger {
+    display: flex;
+    z-index: 9999;
+    position: relative;
+  }
+  .hamburger span { transition: all 0.3s ease; }
+
+  /* Pricing toggle stacked */
+  .pricing-toggle { flex-wrap: wrap; justify-content: center; }
+
+  /* Stat counters wrap */
+  .stats-row { flex-wrap: wrap; gap: 1.5rem !important; }
+  .stats-row > div { min-width: 80px; }
+
+  /* Certificate highlights grid */
+  section [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact grid → single col */
+  section > div > div[style*="grid-template-columns:1fr 1.5fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Cards padding adjust */
+  .card { padding: 1.5rem; }
+
+  /* Buttons full width on small screens */
+  .btn { width: auto; }
+}
+
+@media (max-width: 480px) {
+  .navbar { padding: 0 4%; }
+  section { padding: 3rem 4%; }
+  .page-hero { padding: 5.5rem 4% 2.5rem; }
+
+  h1, .section-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+  }
+  .section-subtitle { font-size: 1rem; }
+
+  .btn { padding: 0.7rem 1.3rem; font-size: 0.9rem; letter-spacing: 1px; }
+
+  /* Stats row on index hero */
+  div[style*="gap:2rem"] { gap: 1.2rem !important; }
+
+  /* Footer grid single col */
+  .footer-grid { grid-template-columns: 1fr; }
+
+  /* Course filter buttons wrap */
+  .filter-btn { padding: 0.4rem 0.9rem; font-size: 0.88rem; }
+
+  /* Icon boxes smaller */
+  .icon-box { width: 44px; height: 44px; }
+
+  /* Form inputs full size */
+  .form-input, .form-select, .form-textarea {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
 }
 
 /* =============================================

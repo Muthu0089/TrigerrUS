@@ -84,25 +84,7 @@ function showToast(msg, type = 'success') {
 
 // ==================== NAVBAR ====================
 function initNavbar() {
-  const navbar    = document.querySelector('.navbar');
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks  = document.querySelector('.nav-links');
-
-  window.addEventListener('scroll', () => {
-    navbar?.classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  hamburger?.addEventListener('click', () => navLinks?.classList.toggle('open'));
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => navLinks?.classList.remove('open'));
-  });
-
-  // Active link highlight
-  const page = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    if ((link.getAttribute('href') || '').split('/').pop() === page)
-      link.classList.add('active');
-  });
+ 
 }
 
 // ==================== SCROLL ANIMATIONS ====================

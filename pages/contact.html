@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Contact — TRIGERRUS</title>
   <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="icon" type="image/png" href="assets/logo7.png">
   <style>
     #sparkleCanvas{display:none!important;}
     input,select,textarea,button,a,label{position:relative;z-index:100!important;pointer-events:auto!important;cursor:auto;}
@@ -94,7 +95,7 @@
             <label class="form-label">Interested Course *</label>
             <select id="f_course" class="form-select">
               <option value="">— Select a course —</option>
-              <option value="UiPath Starter Bootcamp">UiPath Starter Bootcamp — ₹9,999</option>
+              <option value="UiPath Starter Bootcamp">UiPath Starter Bootcamp — ₹7,499</option>
               <option value="UiPath RPA Developer Pro">UiPath RPA Developer Pro — ₹18,999</option>
               <option value="UiPath Mastero Cert Prep">UiPath Mastero Cert Prep — ₹19,999</option>
               <option value="AI Agentic Automation">AI Agentic Automation — ₹19,999</option>
@@ -119,25 +120,26 @@
 
 <div id="footer-placeholder"></div>
 
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="../js/icons.js"></script>
 <script src="../js/nav-footer.js"></script>
 <script src="../js/main.js"></script>
 <script>
-var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwE67yFLspQJgPEY5K00vjS4czyEluRrdm68GT_pXHJAZx_JqEQZhXk2581QyhxIg6T/exec'; // ← paste your Apps Script URL
+// ══════════════════════════════════════════
+//  EMAILJS CONFIG — paste your keys below
+// ══════════════════════════════════════════
+var EJS_PUBLIC_KEY  = 'rNL0SRiLwe3lSrdsi';    // Account → Public Key
+var EJS_SERVICE_ID  = 'service_yq869wh';    // Email Services → Service ID
+var EJS_TEMPLATE_ID = 'template_t9qyd9m';   // Email Templates → Template ID
 
-function sendToSheet(d) {
-  if (!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbwE67yFLspQJgPEY5K00vjS4czyEluRrdm68GT_pXHJAZx_JqEQZhXk2581QyhxIg6T/exec') return;
-  var params = new URLSearchParams({
-    name: d.name||'', email: d.email||'',
-    phone: d.phone||'', course: d.course||'', message: d.message||''
-  });
-  var img = new Image();
-  img.src = SHEET_URL + '?' + params.toString();
-}
+// Init EmailJS
+emailjs.init(EJS_PUBLIC_KEY);
 
 document.addEventListener('DOMContentLoaded', function(){
   var btn = document.getElementById('submitBtn');
   if(!btn) return;
+
   btn.addEventListener('click', function(){
     var name    = document.getElementById('f_name').value.trim();
     var email   = document.getElementById('f_email').value.trim();
@@ -145,23 +147,48 @@ document.addEventListener('DOMContentLoaded', function(){
     var course  = document.getElementById('f_course').value;
     var message = document.getElementById('f_message').value.trim();
 
+    // Validate
     if(!name)   { showToast('Please enter your name', 'error'); return; }
     if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
                 { showToast('Enter a valid email', 'error'); return; }
     if(!phone)  { showToast('Please enter phone number', 'error'); return; }
     if(!course) { showToast('Please select a course', 'error'); return; }
 
-    var data = {name:name,email:email,phone:phone,course:course,message:message};
-    sendToSheet(data);
+    // Disable button + show loading
+    btn.disabled = true;
+    btn.textContent = 'SENDING...';
 
-    // Reset
-    ['f_name','f_email','f_phone','f_message'].forEach(function(id){
-      document.getElementById(id).value='';
+    // Send via EmailJS
+    emailjs.send(EJS_SERVICE_ID, EJS_TEMPLATE_ID, {
+      from_name : name,
+      from_email: email,
+      phone     : phone,
+      course    : course,
+      message   : message || 'No message provided',
+      reply_to  : email
+    })
+    .then(function(){
+      // Success
+      btn.disabled = false;
+      btn.textContent = 'BOOK FREE DEMO SESSION →';
+
+      // Clear form
+      ['f_name','f_email','f_phone','f_message'].forEach(function(id){
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('f_course').value = '';
+
+      // Show success box
+      document.getElementById('successBox').style.display = 'block';
+      showToast('Message sent! We will contact you soon.', 'success');
+    })
+    .catch(function(err){
+      // Error
+      btn.disabled = false;
+      btn.textContent = 'BOOK FREE DEMO SESSION →';
+      showToast('Failed to send. Please call us directly!', 'error');
+      console.error('EmailJS error:', err);
     });
-    document.getElementById('f_course').value='';
-
-    document.getElementById('successBox').style.display='block';
-    showToast('Submitted! We will contact you soon.', 'success');
   });
 });
 </script>
