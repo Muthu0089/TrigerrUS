@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Courses — TRIGERRUS</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    input,select,textarea,button,a,label{position:relative;z-index:10;pointer-events:auto;}
+  </style>
+</head>
+<body>
+<div class="stars-bg"></div>
+<div id="navbar-placeholder"></div>
+
+<div class="page-hero">
+  <div style="max-width:700px;">
+    <div class="section-tag fade-up">OUR PROGRAMS</div>
+    <h1 class="section-title fade-up fade-up-delay-1">All Courses <span class="gradient-text">Under ₹20,000</span></h1>
+    <p class="section-subtitle fade-up fade-up-delay-2">Industry-aligned curriculum designed with hiring managers at top MNCs. Real bots, real projects.</p>
+  </div>
+</div>
+
+<!-- Filter tabs -->
+<section style="padding:2rem 5% 0;position:relative;z-index:2;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+      <button class="filter-btn active" onclick="filterCourses('all',this)">All Courses</button>
+      <button class="filter-btn" onclick="filterCourses('rpa',this)">RPA / UiPath</button>
+      <button class="filter-btn" onclick="filterCourses('ai',this)">AI Agentic</button>
+      <button class="filter-btn" onclick="filterCourses('python',this)">Python</button>
+      <button class="filter-btn" onclick="filterCourses('combo',this)">Combo</button>
+    </div>
+  </div>
+</section>
+
+<style>
+.filter-btn{padding:0.5rem 1.2rem;border-radius:50px;border:1px solid rgba(0,245,212,0.3);background:transparent;color:var(--text-secondary);font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.95rem;cursor:pointer;transition:all 0.3s;}
+.filter-btn.active,.filter-btn:hover{background:rgba(0,245,212,0.12);border-color:var(--cyan);color:var(--cyan);}
+.course-card{transition:opacity 0.3s,transform 0.3s;}
+.course-card.hidden{display:none;}
+.duration-chip{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:20px;padding:0.25rem 0.7rem;font-size:0.82rem;color:var(--text-muted);margin:0 0.3rem 0.3rem 0;}
+.check-icon-svg{display:inline-flex;align-items:center;margin-right:0.4rem;}
+</style>
+
+<section style="padding-top:1rem;position:relative;z-index:2;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="grid-3" id="courseGrid">
+
+      <!-- 1. UiPath Starter -->
+      <div class="card fade-up course-card" data-cat="rpa">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;">
+          <div class="icon-box icon-box-cyan icon-cyan" data-icon="robot"></div>
+          <div style="text-align:right;">
+            <span class="badge badge-cyan">STARTER</span>
+          </div>
+        </div>
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;">UiPath Starter Bootcamp</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1rem;line-height:1.7;">Zero to first bot in 4 weeks. Perfect for freshers & career switchers entering automation.</p>
+        <div style="margin-bottom:1rem;">
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="clock"></span>4 Weeks</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="layers"></span>Beginner</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="award"></span>Certificate</span>
+        </div>
+        <ul style="list-style:none;margin-bottom:1.5rem;">
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>UiPath Studio & StudioX basics</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>Selectors, Activities & Variables</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;"><span class="check-icon-svg" data-icon="check"></span>3 Mini Bot Projects</li>
+        </ul>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;">₹9,999</span>
+          <a href="contact.html" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.9rem;">Enroll Now →</a>
+        </div>
+      </div>
+
+      <!-- 2. UiPath RPA Developer -->
+      <div class="card fade-up fade-up-delay-1 course-card" data-cat="rpa">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;">
+          <div class="icon-box icon-box-cyan icon-cyan" data-icon="zap"></div>
+          <div style="text-align:right;"><span class="badge badge-cyan">BESTSELLER</span></div>
+        </div>
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;">UiPath RPA Developer Pro</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1rem;line-height:1.7;">Master UiPath Studio, Orchestrator, attended & unattended bots. Enterprise workflows from scratch.</p>
+        <div style="margin-bottom:1rem;">
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="clock"></span>12 Weeks</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="layers"></span>Intermediate</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="award"></span>UiPath Cert Prep</span>
+        </div>
+        <ul style="list-style:none;margin-bottom:1.5rem;">
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>Orchestrator & Bot Management</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>REFramework Deep Dive</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;"><span class="check-icon-svg" data-icon="check"></span>5 Enterprise Projects</li>
+        </ul>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;">₹18,999</span>
+          <a href="contact.html" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.9rem;">Enroll Now →</a>
+        </div>
+      </div>
+
+      <!-- 3. UiPath Mastero -->
+      <div class="card fade-up fade-up-delay-2 course-card" data-cat="rpa">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;">
+          <div class="icon-box icon-box-purple icon-purple" data-icon="sparkle"></div>
+          <div style="text-align:right;"><span class="badge badge-purple">HOT 🔥</span></div>
+        </div>
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;">UiPath Mastero Cert Prep</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1rem;line-height:1.7;">Official UiPath Mastero certification prep. Advanced workflows, REFramework & full exam strategy.</p>
+        <div style="margin-bottom:1rem;">
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="clock"></span>8 Weeks</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="layers"></span>Advanced</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="award"></span>Mastero Cert</span>
+        </div>
+        <ul style="list-style:none;margin-bottom:1.5rem;">
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>Mastero exam pattern & mock tests</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>Advanced debugging & error handling</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;"><span class="check-icon-svg" data-icon="check"></span>1:1 Mentorship sessions</li>
+        </ul>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:var(--purple);font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;">₹19,999</span>
+          <a href="contact.html" class="btn" style="padding:0.5rem 1.1rem;font-size:0.9rem;background:var(--gradient-purple);color:#fff;">Enroll Now →</a>
+        </div>
+      </div>
+
+      <!-- 4. AI Agentic -->
+      <div class="card fade-up course-card" data-cat="ai">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;">
+          <div class="icon-box icon-box-blue icon-blue" data-icon="zap"></div>
+          <div style="text-align:right;"><span class="badge badge-blue">NEW</span></div>
+        </div>
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;">AI Agentic Automation</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1rem;line-height:1.7;">Build intelligent AI agents, LLM-powered workflows & autonomous bots using UiPath + Python.</p>
+        <div style="margin-bottom:1rem;">
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="clock"></span>10 Weeks</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="layers"></span>Intermediate</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="award"></span>Certificate</span>
+        </div>
+        <ul style="list-style:none;margin-bottom:1.5rem;">
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>AI Agent design with UiPath</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>LLM integration & prompt engineering</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;"><span class="check-icon-svg" data-icon="check"></span>Autonomous workflow automation</li>
+        </ul>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:var(--blue);font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;">₹19,999</span>
+          <a href="contact.html" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.9rem;">Enroll Now →</a>
+        </div>
+      </div>
+
+      <!-- 5. Python Automation -->
+      <div class="card fade-up fade-up-delay-1 course-card" data-cat="python">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;">
+          <div class="icon-box icon-box-cyan icon-cyan" data-icon="python"></div>
+          <div style="text-align:right;"><span class="badge badge-cyan">POPULAR</span></div>
+        </div>
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;">Python Automation Pro</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1rem;line-height:1.7;">Selenium, Playwright, REST API, web scraping, data pipelines & CI/CD. Job-ready in 10 weeks.</p>
+        <div style="margin-bottom:1rem;">
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="clock"></span>10 Weeks</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="layers"></span>Intermediate</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="award"></span>Certificate</span>
+        </div>
+        <ul style="list-style:none;margin-bottom:1.5rem;">
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>Selenium & Playwright automation</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>REST API & web scraping</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;"><span class="check-icon-svg" data-icon="check"></span>PyAutoGUI & data pipelines</li>
+        </ul>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;">₹17,999</span>
+          <a href="contact.html" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.9rem;">Enroll Now →</a>
+        </div>
+      </div>
+
+      <!-- 6. Full Stack Automation -->
+      <div class="card fade-up fade-up-delay-2 course-card" data-cat="combo">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;">
+          <div class="icon-box icon-box-purple icon-purple" data-icon="layers"></div>
+          <div style="text-align:right;"><span class="badge badge-purple">COMBO</span></div>
+        </div>
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;">Full Stack Automation</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1rem;line-height:1.7;">UiPath + Python + Web Dev. Become a complete automation engineer in 5 months.</p>
+        <div style="margin-bottom:1rem;">
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="clock"></span>5 Months</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="layers"></span>All Levels</span>
+          <span class="duration-chip"><span class="check-icon-svg" data-icon="award"></span>Dual Cert</span>
+        </div>
+        <ul style="list-style:none;margin-bottom:1.5rem;">
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>UiPath RPA + Python combined</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;border-bottom:1px solid var(--border);"><span class="check-icon-svg" data-icon="check"></span>Web automation + cloud basics</li>
+          <li style="color:var(--text-secondary);font-size:0.93rem;padding:0.3rem 0;"><span class="check-icon-svg" data-icon="check"></span>10+ real-world projects</li>
+        </ul>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="color:var(--purple);font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;">₹19,999</span>
+          <a href="contact.html" class="btn" style="padding:0.5rem 1.1rem;font-size:0.9rem;background:var(--gradient-purple);color:#fff;">Enroll Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/icons.js"></script>
+<script src="../js/nav-footer.js"></script>
+<script src="../js/main.js"></script>
+<script>
+function filterCourses(cat, btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.course-card').forEach(function(c){
+    if(cat==='all'||c.dataset.cat===cat){ c.classList.remove('hidden'); }
+    else { c.classList.add('hidden'); }
+  });
+}
+</script>
+</body>
+</html>

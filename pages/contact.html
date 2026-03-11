@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact — TRIGERRUS</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    #sparkleCanvas{display:none!important;}
+    input,select,textarea,button,a,label{position:relative;z-index:100!important;pointer-events:auto!important;cursor:auto;}
+    select{cursor:pointer!important;}
+    button{cursor:pointer!important;}
+    #contactForm,section,.card{position:relative;z-index:50;}
+  </style>
+</head>
+<body>
+<div class="stars-bg"></div>
+<div id="navbar-placeholder"></div>
+
+<div class="page-hero">
+  <div style="max-width:700px;">
+    <div class="section-tag fade-up">GET IN TOUCH</div>
+    <h1 class="section-title fade-up fade-up-delay-1">Ready to <span class="gradient-text">Automate</span> Your Career?</h1>
+    <p class="section-subtitle fade-up fade-up-delay-2">Book a free demo session. Talk to a career counselor and find your perfect path.</p>
+  </div>
+</div>
+
+<section style="position:relative;z-index:10;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start;">
+
+      <!-- Left info -->
+      <div class="fade-up">
+        <h2 style="font-family:'Orbitron',sans-serif;font-size:1.2rem;margin-bottom:2rem;color:var(--cyan);">Let's Connect</h2>
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+          <div class="card" style="display:flex;gap:1rem;align-items:center;padding:1.2rem 1.5rem;">
+            <span class="contact-icon" data-icon="mail"></span>
+            <div>
+              <div style="color:var(--text-muted);font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.2rem;">Email</div>
+              <a href="mailto:info.trigerrus@gmail.com" style="color:var(--cyan);font-weight:600;text-decoration:none;">info.trigerrus@gmail.com</a>
+            </div>
+          </div>
+          <div class="card" style="display:flex;gap:1rem;align-items:center;padding:1.2rem 1.5rem;">
+            <span class="contact-icon" data-icon="phone"></span>
+            <div>
+              <div style="color:var(--text-muted);font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.2rem;">Phone</div>
+              <a href="tel:+916379568241" style="color:var(--cyan);font-weight:600;text-decoration:none;">+91 63795 68241</a>
+            </div>
+          </div>
+          <div class="card" style="display:flex;gap:1rem;align-items:center;padding:1.2rem 1.5rem;">
+            <span class="contact-icon" data-icon="mappin"></span>
+            <div>
+              <div style="color:var(--text-muted);font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.2rem;">Location</div>
+              <span style="color:var(--text-secondary);font-weight:600;">Chennai, Tamil Nadu</span>
+            </div>
+          </div>
+          <div class="card" style="display:flex;gap:1rem;align-items:center;padding:1.2rem 1.5rem;">
+            <span class="contact-icon" data-icon="clock"></span>
+            <div>
+              <div style="color:var(--text-muted);font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.2rem;">Office Hours</div>
+              <span style="color:var(--text-secondary);font-weight:600;">Mon–Sat, 9 AM – 7 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right form -->
+      <div class="card fade-up fade-up-delay-1" style="padding:2.5rem;">
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--cyan);margin-bottom:1.8rem;">Book Your Free Demo</h3>
+
+        <!-- Success message -->
+        <div id="successBox" style="display:none;background:rgba(0,245,212,0.08);border:1px solid rgba(0,245,212,0.3);border-radius:12px;padding:1.2rem;margin-bottom:1.5rem;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">✅</div>
+          <div style="font-family:'Orbitron',sans-serif;font-size:0.9rem;color:var(--cyan);margin-bottom:0.3rem;">Request Submitted!</div>
+          <div style="color:var(--text-secondary);font-size:0.95rem;">Our team will contact you within 24 hours.</div>
+        </div>
+
+        <div id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="f_name" class="form-input" placeholder="Your full name"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" id="f_phone" class="form-input" placeholder="+91 98765 43210"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" id="f_email" class="form-input" placeholder="you@email.com"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Interested Course *</label>
+            <select id="f_course" class="form-select">
+              <option value="">— Select a course —</option>
+              <option value="UiPath Starter Bootcamp">UiPath Starter Bootcamp — ₹9,999</option>
+              <option value="UiPath RPA Developer Pro">UiPath RPA Developer Pro — ₹18,999</option>
+              <option value="UiPath Mastero Cert Prep">UiPath Mastero Cert Prep — ₹19,999</option>
+              <option value="AI Agentic Automation">AI Agentic Automation — ₹19,999</option>
+              <option value="Python Automation Pro">Python Automation Pro — ₹17,999</option>
+              <option value="Full Stack Automation">Full Stack Automation — ₹19,999</option>
+              <option value="Not Sure - Need Guidance">Not Sure — Need Guidance</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message / Goals</label>
+            <textarea id="f_message" class="form-textarea" placeholder="Tell us your current experience and career goals..."></textarea>
+          </div>
+          <button id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;">
+            BOOK FREE DEMO SESSION →
+          </button>
+          <p style="color:var(--text-muted);font-size:0.88rem;text-align:center;margin-top:1rem;">No spam. We respect your privacy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/icons.js"></script>
+<script src="../js/nav-footer.js"></script>
+<script src="../js/main.js"></script>
+<script>
+var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwE67yFLspQJgPEY5K00vjS4czyEluRrdm68GT_pXHJAZx_JqEQZhXk2581QyhxIg6T/exec'; // ← paste your Apps Script URL
+
+function sendToSheet(d) {
+  if (!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbwE67yFLspQJgPEY5K00vjS4czyEluRrdm68GT_pXHJAZx_JqEQZhXk2581QyhxIg6T/exec') return;
+  var params = new URLSearchParams({
+    name: d.name||'', email: d.email||'',
+    phone: d.phone||'', course: d.course||'', message: d.message||''
+  });
+  var img = new Image();
+  img.src = SHEET_URL + '?' + params.toString();
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  var btn = document.getElementById('submitBtn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var name    = document.getElementById('f_name').value.trim();
+    var email   = document.getElementById('f_email').value.trim();
+    var phone   = document.getElementById('f_phone').value.trim();
+    var course  = document.getElementById('f_course').value;
+    var message = document.getElementById('f_message').value.trim();
+
+    if(!name)   { showToast('Please enter your name', 'error'); return; }
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+                { showToast('Enter a valid email', 'error'); return; }
+    if(!phone)  { showToast('Please enter phone number', 'error'); return; }
+    if(!course) { showToast('Please select a course', 'error'); return; }
+
+    var data = {name:name,email:email,phone:phone,course:course,message:message};
+    sendToSheet(data);
+
+    // Reset
+    ['f_name','f_email','f_phone','f_message'].forEach(function(id){
+      document.getElementById(id).value='';
+    });
+    document.getElementById('f_course').value='';
+
+    document.getElementById('successBox').style.display='block';
+    showToast('Submitted! We will contact you soon.', 'success');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — TRIGERRUS</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="stars-bg"></div>
+
+<div id="navbar-placeholder"></div>
+
+<div class="page-hero">
+  <div style="max-width:700px;">
+    <div class="section-tag fade-up">TRANSPARENT PRICING</div>
+    <h1 class="section-title fade-up fade-up-delay-1">Simple, Honest <span class="gradient-text">Pricing</span></h1>
+    <p class="section-subtitle fade-up fade-up-delay-2">No hidden fees. Pay once, learn forever. EMI options available for all plans.</p>
+  </div>
+</div>
+
+<section>
+  <div style="max-width:1100px;margin:0 auto;">
+    <!-- Toggle -->
+    <div class="text-center" style="margin-bottom:3rem;">
+      <div style="display:inline-flex;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:50px;padding:4px;gap:4px;">
+        <button class="toggle-btn active" id="btnOnline" onclick="toggleMode('online')">Online</button>
+        <button class="toggle-btn" id="btnOffline" onclick="toggleMode('offline')">Offline / Classroom</button>
+      </div>
+    </div>
+
+    <style>
+    .toggle-btn {
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .toggle-btn.active {
+      background: var(--gradient-cyan);
+      color: var(--bg-primary);
+    }
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card:hover { transform: translateY(-8px); box-shadow: var(--glow-cyan); border-color: var(--border-hover); }
+    .price-card.popular {
+      border-color: rgba(0,245,212,0.5);
+      box-shadow: 0 0 40px rgba(0,245,212,0.12);
+    }
+    .popular-tag {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--gradient-cyan);
+      color: var(--bg-primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+    .check-item:last-child { border-bottom: none; }
+    .check-icon { color: var(--cyan); flex-shrink: 0; margin-top: 2px; }
+    .cross-icon { color: var(--text-muted); flex-shrink: 0; margin-top: 2px; }
+    </style>
+
+    <div class="grid-3">
+      <!-- Starter -->
+      <div class="price-card fade-up">
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;color:var(--text-secondary);">STARTER</h3>
+        <div style="margin-bottom:1.5rem;">
+          <span class="online-price" style="font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--text-primary);">₹9,999</span>
+          <span class="offline-price" style="font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--text-primary);display:none;">₹12,999</span>
+          <span style="color:var(--text-muted);font-size:0.95rem;display:block;margin-top:0.25rem;">one-time payment</span>
+        </div>
+        <p style="color:var(--text-secondary);font-size:1rem;margin-bottom:1.5rem;line-height:1.6;">Perfect for beginners exploring automation for the first time.</p>
+        <div style="margin-bottom:1.8rem;">
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>4-week UiPath Starter Bootcamp</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>5 hands-on projects</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>Course completion certificate</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>Community forum access</span></div>
+          <div class="check-item"><span class="cross-icon-svg" data-icon="x"></span><span style="color:var(--text-muted);">1:1 mentorship</span></div>
+          <div class="check-item"><span class="cross-icon-svg" data-icon="x"></span><span style="color:var(--text-muted);">Placement support</span></div>
+        </div>
+        <a href="contact.html" class="btn btn-secondary" style="width:100%;justify-content:center;">Get Started</a>
+      </div>
+
+      <!-- Professional -->
+      <div class="price-card popular fade-up fade-up-delay-1">
+        <span class="popular-tag">MOST POPULAR</span>
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;color:var(--cyan);">PROFESSIONAL</h3>
+        <div style="margin-bottom:1.5rem;">
+          <span class="online-price" style="font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--cyan);">₹24,999</span>
+          <span class="offline-price" style="font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--cyan);display:none;">₹29,999</span>
+          <span style="color:var(--text-muted);font-size:0.95rem;display:block;margin-top:0.25rem;">Flexible payment· Starting from ₹2,499/mo</span>
+        </div>
+        <p style="color:var(--text-secondary);font-size:1rem;margin-bottom:1.5rem;line-height:1.6;">For serious learners targeting MNC placements and UiPath certification.</p>
+        <div style="margin-bottom:1.8rem;">
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>12-week UiPath RPA Developer Pro</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>Python Automation (10 weeks)</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>UiPath Certification prep</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>5 live 1:1 mentor sessions</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>Resume & LinkedIn review</span></div>
+          <div class="check-item"><span class="cross-icon-svg" data-icon="x"></span><span style="color:var(--text-muted);">Guaranteed placement</span></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Enroll Now</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="price-card fade-up fade-up-delay-2">
+        <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;margin-bottom:0.5rem;color:var(--purple);">PREMIUM</h3>
+        <div style="margin-bottom:1.5rem;">
+          <span class="online-price" style="font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--purple);">₹39,999</span>
+          <span class="offline-price" style="font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--purple);display:none;">₹49,999</span>
+          <span style="color:var(--text-muted);font-size:0.95rem;display:block;margin-top:0.25rem;">Flexible payment · Starting from ₹3,999/mo</span>
+        </div>
+        <p style="color:var(--text-secondary);font-size:1rem;margin-bottom:1.5rem;line-height:1.6;">Complete transformation — Full Stack Automation Engineer with placement guarantee.</p>
+        <div style="margin-bottom:1.8rem;">
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>Everything in Professional</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>React + Node.js Web Dev</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>AWS Cloud Deployment</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>Unlimited 1:1 mentorship (6 mo)</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span>Mock interviews with HRs</span></div>
+          <div class="check-item"><span class="check-icon-svg" data-icon="check"></span><span style="color:var(--cyan);font-weight:600;">Placement Guarantee</span></div>
+        </div>
+        <a href="contact.html" class="btn" style="width:100%;justify-content:center;background:var(--gradient-purple);color:#fff;">Get Premium</a>
+      </div>
+    </div>
+
+    <!-- EMI Note -->
+    <div style="text-align:center;margin-top:3rem;padding:2rem;background:rgba(0,245,212,0.05);border:1px solid var(--border);border-radius:16px;" class="fade-up">
+      <h3 style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--cyan);margin-bottom:0.5rem;"><span style="display:inline-flex;align-items:center;gap:0.5rem;"><span data-icon="creditcard" style="color:var(--cyan);"></span> Easy EMI Available</span></h3>
+      <p style="color:var(--text-secondary);font-size:1.05rem;">Pay in 3, 6, or 12 monthly instalments via credit/debit card or UPI. No cost EMI on select cards.</p>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/icons.js"></script>
+<script src="../js/nav-footer.js"></script>
+<script src="../js/main.js"></script>
+<script>
+function toggleMode(mode) {
+  document.getElementById('btnOnline').classList.toggle('active', mode === 'online');
+  document.getElementById('btnOffline').classList.toggle('active', mode === 'offline');
+  document.querySelectorAll('.online-price').forEach(el => el.style.display = mode === 'online' ? '' : 'none');
+  document.querySelectorAll('.offline-price').forEach(el => el.style.display = mode === 'offline' ? '' : 'none');
+}
+</script>
+</body>
+</html>
